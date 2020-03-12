@@ -1,0 +1,19 @@
+{{ partial "head.html" . }}
+<body>
+    <div class="react-container" >
+        <header class="header-container">
+            {{ partial "header.html" . }}
+        </header>
+        <div class="main-container" id="main-container">
+            <main class="main-content">
+            {{ block "main_content" . }}
+            {{ end }}
+            </main>
+            {{ partial "footer.html" . }}
+            {{ partial "panel.html" . }}
+        </div>
+    </div>
+    {{ partial "music.html" . }}
+    {{ partial "after_footer.html" .}}
+</body>
+</html>

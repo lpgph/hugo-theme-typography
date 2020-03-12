@@ -1,0 +1,50 @@
+
+ <!-- 判断文章是否关闭了评论 -->
+  {{ if .Site.DisqusShortname }}
+    {{ template "_internal/disqus.html" . }}
+  {{ else }}
+    <section class="comment-container" id="comment-container">
+  </section>
+    {{if  .Site.Params.Gitalk }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  {{ else if .Site.Params.Valine }}
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  {{end}}
+
+    <script>
+    $(function () {
+      {{ if  .Site.Params.Gitalk }}
+      var gitalk = new Gitalk({
+        language: '{{ .Site.Params.Gitalk.language }}' ,
+        clientID: '{{ .Site.Params.Gitalk.clientID }}',
+        clientSecret: '{{ .Site.Params.Gitalk.clientSecret }}',
+        repo: '{{ .Site.Params.Gitalk.repo }}',
+        owner: '{{ .Site.Params.Gitalk.owner }}',
+        admin: {{ .Site.Params.Gitalk.admin }},
+        createIssueManually: true,
+        perPage: 1,
+        id: window.location.pathname,      // Ensure uniqueness and length less than 50  页面的唯一标识。长度必须小于50。
+        distractionFreeMode: false  // Facebook-like distraction free mode  类似Facebook评论框的全屏遮罩效果.
+      });
+      gitalk.render('comment-container');
+      {{ else if .Site.Params.Valine }}
+
+        new Valine({
+          el: '#comment-container' ,
+          appId: '{{ .Site.Params.Valine.appId }}',
+          appKey: '{{ .Site.Params.Valine.appKey }}',
+          notify:false, 
+          verify:true, 
+          avatar:'mp', 
+          placeholder: 'just go go' 
+      });
+
+      {{end}}
+
+    })
+  </script>
+
+  {{end}}
+
+

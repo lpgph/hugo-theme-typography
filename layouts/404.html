@@ -1,0 +1,29 @@
+
+{{ partial "head.html" . }}
+<body>
+    <main class="app-main" style="background: #fff;">
+        <div class="main-container">
+            <div class="errPage-container">
+            <div>
+              <h1 class="text-jumbo text-ginormous">
+                {{T "pageNotFoundTitle"}}
+              </h1>
+              <h2>{{T "pageNotFound"}}</h2>
+              <div class="list-unstyled">
+                <a href="{{ .Site.BaseURL }}" class="pan-back-btn">
+                  <i class="fa fa-angle-left"></i>
+                  <span>{{T "back"}}</span>
+                </a>
+              </div>
+              
+            </div>
+            <div>
+              <img src="{{ .Site.BaseURL }}img/404.gif" width="313" height="428" alt="Girl has dropped her ice cream.">
+            </div>
+          </div>
+        </div>
+    </main>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+ <ul class="fixed-panel" id="fixed-panel"> 
+  {{ if .IsPage }}
+  <li>
+    <div class="toc-panel">
+      <button onclick="showToc()" title="{{ T "toc" }}" >
+        <i class="fa fa-expand"></i>
+      </button>
+      <aside class="article-toc">
+        <h2 class="toc-title">{{ T "toc" }}</h2>
+        <div class="table-of-contents" id="article-toc">
+          {{ .TableOfContents }}
+        </div>
+      </aside>
+    </div>
+  </li>
+  {{ end }}
+
+  <li>
+    <button title="{{ T "share" | humanize }}">
+      <i class="fa fa-share-alt"></i>
+    </button>
+  </li>
+  <li>
+    <button onclick="backToTop()" id="backToTop" title="{{ T "backToTop" | humanize }}" style="display: none;">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+  </li>
+</ul>

@@ -1,0 +1,12 @@
+
+  .font-zoom{
+    transition-duration: .3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+
+    &:active,
+    &:focus,
+    &:hover {
+      transform: scale(1.1);
+    }
+  }

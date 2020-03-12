@@ -1,0 +1,13 @@
+{{ define "main_content" }}
+  <ul class="post-list">
+    {{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $paginator := .Paginate $pages}}
+    {{ range $paginator.Pages }}
+      <li>
+        {{ .Render "summary"}}
+      </li>
+    {{ end }}
+  </ul>
+    <!-- pagination -->
+  {{ template "_internal/pagination.html" . }}
+{{ end }}

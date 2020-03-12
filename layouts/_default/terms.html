@@ -1,0 +1,35 @@
+
+
+{{ define "main_content" }}
+  {{ $Data := .Data }}
+  {{ $data := .Data }}
+  <p class="path-title">{{ T .Data.Plural }}<sup>({{ len .Data.Terms }})</sup></p>
+
+  {{ if $Data.Terms}}
+
+    {{- $maxSize := 35.0 -}}
+    {{- $minSize := 16.0 -}}
+    {{- $sizeSpread := ( sub $maxSize $minSize ) -}}
+
+    {{- $maxCount := ( index $Data.Terms.ByCount 0 ).Count -}}
+    {{- $minCount := ( index $Data.Terms.ByCount.Reverse 0 ).Count -}}
+    {{- $countSpread := ( sub $maxCount $minCount ) -}}
+
+
+    {{- $.Scratch.Set "sizeStep" 0 -}}
+    {{- if gt $countSpread 0 -}}
+    {{- $.Scratch.Set "sizeStep" ( div $sizeSpread $countSpread ) -}}
+    {{- end -}}
+  <ul class="terms-list">
+  {{ range .Data.Terms.ByCount }}
+  {{- $count := .Count -}}
+  {{- $sizeStep := ( $.Scratch.Get "sizeStep" ) -}}
+  {{- $size := ( add $minSize ( mul $sizeStep ( sub $count $minCount ) ) ) -}}
+
+    {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
+    <li><a href="{{ $termLink }}" title="{{ .Term }}" style="font-size: {{ $size }}px;">{{ .Term }}<sup>({{ .Count }})</sup></a></li>
+  {{ end }}
+  </ul>
+  {{ end }}
+
+{{ end }}

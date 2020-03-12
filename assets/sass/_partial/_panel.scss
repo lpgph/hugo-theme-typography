@@ -1,0 +1,50 @@
+
+
+.fixed-panel{
+  position: fixed;
+  top: 20%;
+  right: 0;
+  z-index: 99;
+  & > li{
+    height: 3rem;
+    button{
+      padding: 0;
+      height: 2.8rem;
+      width: 3rem;
+      outline: 0;
+      cursor: pointer;
+      color: $fixed-panel-font-color;
+      font-size: 1.2rem;
+      text-indent: 0.25rem;
+      text-transform: uppercase;
+      line-height: 1.5;
+      text-align: center;
+      border: 0.0625rem solid $fixed-panel-border-color;
+      border-right-width: 0;
+      border-radius: 50% 0 0 50%;
+      background: $fixed-panel-background-color;
+    }
+    .toc-panel{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 20rem;
+        background-color: $fixed-panel-panel-background-color;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
+        -webkit-transition: -webkit-transform .4s;
+        transition: transform .4s;
+      &.show{
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      }
+      button{
+        position: absolute;
+        left: -3rem;
+        top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.header-container{
+  .title{
+    border-left: solid $global-font-color .125rem;
+    padding-bottom: 4rem;
+    font-weight: bolder;
+    font-style: normal;
+    transition: padding .8s ease 0s,background-color .8s ease 0s;
+    background-color: transparent;
+
+    &:hover {
+      padding: 1rem 0 3rem 0;
+      color: $global-background-color ;
+      background-color: $global-font-color ;
+      * {
+        color: $global-background-color ;
+        background-color: transparent;
+      }
+    }
+    a{
+      border: none;
+      display: inline-block;
+      h1{
+        font-size: 3rem;
+      }
+      h3{
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .nav{
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    font-style: normal;
+    li{
+      margin: .5rem 0;
+    }
+  }
+  .social{
+    font-size: 1.4rem;
+    line-height: 1;
+    a{
+      border: none;
+      padding: 0;
+      &:hover{
+        color: $global-font-color;
+        background-color:$global-background-color ;
+        border-bottom: solid transparent 0.125rem;
+      }
+    }
+  }
+  .footer{
+    display: block;
+  }
+}

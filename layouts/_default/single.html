@@ -1,0 +1,44 @@
+{{ define "main_content" }}
+<section class="main-post">
+  <h1>
+    <a href="{{ .Permalink}}" title="{{ .Title }}">
+      {{ .Title }}
+    </a>
+  </h1>
+  <p class="list-tags">
+    <!-- <span>
+      <i class="fa fa-user-o"></i><span><a href="{{ .Site.BaseURL }}about" title="{{ T "author" }}">{{ .Site.Author.name }}</a></span>
+    </span> -->
+    <span>
+      {{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span>
+    </span>
+    <span title="{{ T "wordCountTitle" }}">
+      <i class="fa fa-keyboard-o"></i><span>{{ T "wordCount" .WordCount}}</span>
+    </span>
+    <span title="{{ T "readingTimeTitle" }}">
+      <i class="fa fa-hourglass-half"></i><span>{{ T "readingTime" .ReadingTime}}</span>
+    </span>
+    <span>
+      <i class="fa fa-eye"></i><span id="busuanzi_value_page_pv" title="{{T "pageviews" }}">0</span>
+    </span>
+    {{ with .Params.categories }}
+    <span>
+      <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+    </span>
+    {{ end }}
+    {{ with .Params.tags }}
+    <span>
+      <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+    </span>
+    {{ end }}
+  </p>
+  <article class="post-content">{{ .Content }}</article>
+</section>
+
+{{ partial "post_footer.html" . }}
+
+<div class="main-comment">
+    {{ partial "comment.html" . }}
+</div>
+
+{{ end }}

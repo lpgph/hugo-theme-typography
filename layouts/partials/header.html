@@ -1,0 +1,41 @@
+<div class="title vertical-text">
+  <a href="{{ .Site.BaseURL }}" target="_self" data-pjax >
+    <h3>{{ $.Site.Params.description }}</h3>
+    <h1>{{ .Site.Title }}</h1>
+  </a>
+</div>
+
+<ul class="nav">
+  {{ range .Site.Menus.main  }}
+  <li><a href="{{ .URL }}" target="_self" data-pjax title="{{ T .Name }}">{{ T .Name }}</a></li>
+  {{ end }}
+</ul>
+{{ if .Site.Social }}
+<div class="social" >
+  {{ with .Site.Social.weibo }}
+    <a href="http://weibo.com/{{ . }}" target="_blank" title="weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+  {{ end }}
+  {{ with .Site.Social.twitter }}
+    <a href="https://twitter.com/{{ . }}" target="_blank" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  {{ end }}
+  {{ with .Site.Social.github }}
+    <a href="https://github.com/{{ . }}" target="_blank" title="github"><i class="fa fa-github" aria-hidden="true"></i></a>
+  {{ end }}
+  {{ with .Site.Social.gitlab }}
+    <a href="https://gitlab.com/{{ . }}" target="_blank" title="gitlab"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
+  {{ end }}
+  {{ with .Site.Social.facebook }}
+    <a href="https://www.facebook.com/{{ . }}" target="_blank" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  {{ end }}
+  {{ with .Site.Social.linkin }}
+    <a href="https://www.linkedin.com/{{ . }}" target="_blank" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  {{ end }}
+</div>
+{{end}}
+
+
+{{ partial "footer.html" . }}
+
+
+
+

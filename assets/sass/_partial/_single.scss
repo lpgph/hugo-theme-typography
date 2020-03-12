@@ -1,0 +1,262 @@
+.post-content{
+    .kb {
+      padding: .1em .6em;
+      border: 0.06em solid #ccc;
+      background-color: code-color;
+      color: #8f8f8f;
+      -webkit-box-shadow: 0 0.06em 0 rgba(0, 0, 0, 0.2), 0 0 0 0.12em #fff inset;
+      box-shadow: 0 0.06em 0 rgba(0, 0, 0, 0.2), 0 0 0 0.12em #fff inset;
+      -webkit-border-radius: 0.18em;
+      border-radius: 0.18em;
+      display: inline-block;
+      margin: 0 .1em;
+      text-shadow: 0 0.06em 0 #fff;
+      line-height: 1.5;
+      white-space: nowrap
+    }
+
+    h1,
+    h2 {
+      font-size: 180%;
+      line-height: 1.2em
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 140%
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      // color: #333;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: .3em 0;
+      margin: .5em 0;
+    }
+
+    h1>code,
+    h2>code,
+    h3>code,
+    h4>code,
+    h5>code,
+    h6>code {
+      color: #a3a3a3
+    }
+
+    hr {
+      border: 0.06em solid #dbdbdb
+    }
+
+    strong,
+    em {
+      font-weight: bold
+    }
+
+    acronym,
+    abbr {
+      border-bottom: 0.06em dotted
+    }
+
+    blockquote {
+      border-left: .2em solid #ea6753;
+      margin: .65em 0 .65em 4%;
+      padding-left: 1%;
+      line-height: 1.5;
+      font-size: 110%;
+    }
+
+    blockquote footer {
+      background: #fafafa;
+      padding: 0;
+      margin: 0;
+      font-size: 80%;
+      line-height: 1em
+    }
+
+    blockquote cite {
+      font-style: italic;
+      padding-left: .5em
+    }
+
+    ul,
+    ol {
+      padding-left: 2em;
+      font-size: 105%;
+    }
+
+
+
+    ul li {
+      list-style: disc;
+      text-align: -webkit-match-parent;
+      margin: .5em 0
+    }
+
+    ol li {
+      list-style-type: decimal;
+      margin: .5em 0
+    }
+
+    dl dt {
+      font-weight: blod
+    }
+
+    ul li>code,
+    ol li>code,
+    p code,
+    strong code,
+    em code {
+      font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+      background: #eee;
+      color: #747070;
+      border: 0.06em solid #d6d6d6;
+      padding: 0 0.31em;
+      margin: 0 0.12em;
+      font-size: 90%;
+      white-space: nowrap;
+      text-shadow: 0 0.06em #fff
+    }
+
+    p {
+      font-size: 105%;
+      line-height: 1.7;
+      margin: .7em 0;
+    }
+
+
+    img,
+    video,
+    figure img {
+      max-width: 100%;
+      margin: auto;
+      height: auto;
+      vertical-align: middle;
+      padding-top: .5em;
+    }
+
+
+    figcaption,
+    .caption {
+      text-align: center;
+      display: block;
+      font-size: .9em;
+      font-weight: blod
+    }
+
+    .video-container {
+      position: relative;
+      padding-top: 56%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe,
+    .video-container object,
+    .video-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    table th {
+      font-weight: bold;
+      border-bottom: 0.18em solid #dbdbdb;
+      padding-bottom: .5em
+    }
+
+    table td {
+      border-bottom: 0.06em solid #dbdbdb;
+      padding: 0.62em 0
+    }
+
+    .pullquote {
+      text-align: left;
+      width: 45%;
+      margin: 0;
+      border: none
+    }
+
+    .left {
+      margin-left: .5em;
+      margin-right: 1em;
+      float: left
+    }
+
+    .right {
+      margin-right: .5em;
+      margin-left: 1em;
+      float: right
+    }
+
+    code {
+      font-family: Hack, monospace;
+      font-size: 0.9em;
+      padding: 0.5em;
+      display: block;
+      color: #333;
+      overflow-x: auto;
+      background: #f8f8f8;
+      position: relative;
+      &:after {
+        content: attr(data-lang);
+        text-transform: capitalize;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0;
+        padding: 0 7px;
+        line-height: 2;
+        font-size: .8em;
+        font-weight: 700;
+        height: 2em;
+        color: #716c6c;
+      }
+    }
+
+    pre {
+      margin: 0.6em 0 1em;
+      border: 0.06em solid #ddd;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      overflow-y: hidden;
+      border-radius: 0.5em;
+    }
+
+    @media only screen and (min-width: 48rem) {
+      ul,
+      ol {
+        padding-left: 3em
+      }
+    }
+
+
+    @media only screen and (min-width: 64rem) {
+      img,
+      video,
+      figure img {
+        padding-top: .7em
+      }
+
+      p {
+        margin: 1.2em 0
+      }
+    }
+}

@@ -1,0 +1,13 @@
+{{ define "main_content" }}
+
+    <p class="path-title">{{ T .Data.Plural }} {{ .Title }}<span>({{ len .Pages }})</span></p>
+    <ul class="post-list">
+      {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "posts") }}
+      {{ range $paginator.Pages }}
+        <li>
+          {{ .Render "summary"}}
+        </li>
+      {{ end }}
+    </ul>
+    {{ template "_internal/pagination.html" . }}
+{{ end }}

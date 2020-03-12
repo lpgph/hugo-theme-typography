@@ -1,0 +1,42 @@
+ .errPage-container {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    color: #484848;
+    &>div{
+      padding-top: 7rem;
+    }
+    h2{
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .list-unstyled{
+      span{
+        margin-left: 0.25rem;
+      }
+    }
+    .pan-back-btn {
+      background: #008489;
+      color: #fff;
+      border: none!important;
+      padding: .5rem .6rem;
+      border-radius: 0.25rem;
+    }
+    .pan-gif {
+      margin: 0 auto;
+      display: block;
+    }
+    .pan-img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .text-jumbo {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #484848;
+    }
+  }

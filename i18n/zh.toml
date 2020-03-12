@@ -1,0 +1,196 @@
+# Translations for Simplified Chinese
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+
+[home]
+  other = "主页"
+
+[notes]
+  other = "短笺"
+[Photos]
+  other = "相册"
+[photos]
+  other = "相册"
+  
+[about]
+other = "关于我"
+
+[showMenu]
+  other = "显示侧边栏"
+[search]
+  other = "搜索"
+[share]
+  other = "分享"
+[prev]
+  other = "上一篇:"
+[next]
+  other = "下一篇:"
+[tagsCloud]
+  other = "标签云"
+[backToTop]
+  other = "返回顶部"
+[visitors]
+  other = "访客信息"
+
+[topPosts]
+  other = "置顶文章"
+[newComments]
+  other = "最新评论"
+[notNewComments]
+  other = "暂无最新评论"
+[hotPosts]
+  other = "热门文章"
+[notHotPosts]
+other = "暂无热门文章"
+
+[seeAlso]
+other = "相关推荐"
+
+[wordCountTitle]
+other = "字数统计"
+
+[readingTimeTitle]
+other = "阅读时长"
+
+
+[wordCount]
+other = "{{ .Count }} 字"
+
+[readingTime]
+other = "{{ .Count }} 分钟"
+
+[copyright]
+other = "本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可"
+
+# === Post ===
+[posts]
+other = "文章"
+
+[Notes]
+other = "短签"
+[Posts]
+other = "归档"
+
+# === Post ===
+# === Taxonomy ===
+[all]
+other = "所有"
+
+[tag]
+other = "标签"
+
+[tags]
+other = "标签"
+
+[category]
+other = "分类"
+
+[categories]
+other = "分类"
+# === Taxonomy ===
+
+# === Pagination ===
+[More]
+other = "更多"
+# === Pagination ===
+
+# === partials/footer.html ===
+[powered]
+other = "由 %s 强力驱动"
+
+[hosted]
+other = "静态网页托管于 %s "
+
+[cdn]
+other = "%s 提供 CDN 加速服务"
+
+[blogInfo]
+other = "博客信息"
+
+[postsCount]
+other = "文章数目"
+[commentsCount]
+other = "评论数目"
+[runTime]
+other = "运行天数"
+[lastActive]
+other = "最后活动"
+
+[theme]
+other = "站点使用 %s 主题"
+# === partials/footer.html ===
+
+[footerRunTime]
+other = "本站已勉强存活 "
+
+[ago]
+other = "前"
+
+
+# === partials/comments.html ===
+[valineLang]
+other = "zh-cn"
+# === partials/comments.html ===
+
+
+[pageviews]
+other = "阅读次数"
+[pageComments]
+other = "评论数量"
+
+
+[author]
+other = "作者"
+
+
+[archive]
+other = "归档"
+# === posts/single.html ===
+[toc]
+other = "目录"
+
+[publishDate]
+other = "发布日期"
+
+[publish]
+other = "发布于"
+
+[included]
+other = "收录于"
+
+[back]
+other = "返回"
+
+[readmore]
+other = "阅读全文"
+
+[year]
+other = "年"
+
+[day]
+other = "天"
+
+[hour]
+other = "时"
+
+[minute]
+other = "分"
+
+[second]
+other = "秒"
+
+[return]
+other = "返回"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFoundTitle]
+other = "404 Error"
+[pageNotFound]
+other = "我们似乎找不到你要查找的页面!"
+
+#We can't seem to find the page you're looking for.
+
+[backToHome]
+other = "回到主页"
+# === 404.html ===

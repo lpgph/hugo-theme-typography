@@ -1,0 +1,149 @@
+{{ $jsTemplate := resources.Get "js/main.js" }}
+{{ $secureJS := $jsTemplate | resources.ExecuteAsTemplate "js/main.js" . | fingerprint }}
+<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
+  <script src="{{ .Site.BaseURL }}js/nav-scroll.js"></script>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}lib/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="{{ .Site.BaseURL }}lib/fancybox/jquery.fancybox.js"></script>
+
+<script>
+    $(function() {
+        $(document).pjax('[data-pjax] a, a[data-pjax]', '#main-container', {
+            fragment: '#main-container',
+            timeout: 5000,
+            cache: false
+        }).on('pjax:send',function () {
+        }).on('pjax:click', function() {
+        }).on('pjax:complete', function() {
+          pjaxInitPage();
+        }).on('pjax:end', function() {
+          pjaxInitPage();
+        });
+        pjaxInitPage();
+    })
+</script>
+
+{{ if .Site.Params.Live2dWidget }}
+<script src="{{ .Site.BaseURL }}lib/live2d-widget/js/L2Dwidget.min.js"></script>
+{{end}}
+{{ with .Site.Params.Live2dWidget }}
+<script>
+  $(function () {
+          // 加载看板娘
+      L2Dwidget
+      .on('*', (name) => {
+        console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+      })
+      .init({
+        name:{
+          canvas: 'live2dcanvas', // ID name of the canvas canvas元素的ID
+          div : 'live2d-widget' //  ID name of the div div元素的ID
+        },
+        dev:{
+          border: false //Whether to show border around the canvas 在canvas周围显示边界
+        },
+        model: {
+            jsonPath: "{{ .model }}", // Path to Live2D model's main json eg. `https://test.com/miku.model.json` model主文件路径
+            scale: 1 //模型与canvas的缩放
+        },
+        display: {
+            superSample: 2, // 超采样等级
+            position: "right", //显示位置：左或右
+            width: 200,  //canvas的长度
+            height: 400, //canvas的高度
+            hOffset: 0, //canvas水平偏移
+            vOffset: -20 //canvas垂直偏移
+        },
+        mobile: {
+            show:  {{.mobile.show }},  //是否在移动设备上显示
+            scale:  {{ .mobile.scale }}  //移动设备上的缩放
+        },
+        react: {
+            opacity: 1  //opacity 透明度
+        },
+        dialog: {
+          // 开启对话框
+          enable: {{ .dialog }},
+          script: {
+            // 每空闲 10 秒钟，显示一条一言
+            'every idle 10s': '$hitokoto$',
+            'hover .avatar': '星星在天上而你在我心里 (*/ω＼*)',
+            // 当触摸到角色身体
+            'tap body': '你在做什么?',
+            // 当触摸到角色头部
+            'tap face': '人家已经不是小孩子了！'
+          }
+        }
+      });
+  })
+</script>
+{{end}}
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  function pjaxInitPage() {
+    initScroll();
+    siteTime(new Date('{{ .Site.Params.CreateDate }}'));
+    $.getScript("https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+    initFacybox();
+  }
+  function initFacybox() {
+    $('article figure img').each(function(){
+        if ($(this).parent().attr('data-fancybox="images"')) return;
+        var alt = this.alt;
+        // if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+        $(this).wrap('<a href="' + this.src + '" title="' + alt + '" data-fancybox="images" ></a>');
+
+    });
+    if($.fancybox){
+      $('[data-fancybox]').fancybox({
+        protect: true,
+        buttons:[
+          "zoom",
+          //"share",
+          "slideShow",
+          "fullScreen",
+          "thumbs",
+          "close"
+        ],
+        arrows: true
+      });
+    }
+  }
+
+function siteTime(t1) {
+  window.setTimeout(()=>{
+   siteTime(t1)
+  }, 1000);
+  var diff = getSiteTime(t1);
+  $("#sitetime").text("{{T "footerRunTime"}} "+(diff.years>0 ? diff.years+" {{T "year"}} ":"")+diff.days+" {{T "day"}} "+diff.hours+" {{T "hour"}} "+diff.minutes+" {{T "minute"}} "+diff.seconds+" {{T "second"}}")
+  $("#siteDate").text((diff.years>0 ? diff.years+"{{T "year"}}":"")+diff.days+"{{T "day"}}");
+}
+
+</script>
+
+
+<!--动态线条背景-->
+<!-- <script type="text/javascript" color="220,220,220" opacity='0.5' zIndex="1" count="200" src="{{ .Site.BaseURL }}js/canvas-nest.js"></script> -->
+<!-- 彩带 -->
+<script src="{{ .Site.BaseURL }}js/piao.js" type="text/javascript"></script>
+<!-- 气泡 -->
+<!-- <script src="{{ .Site.BaseURL }}js/circleMagic.js" type="text/javascript"></script> -->
+<!-- <script>
+    $(function() {
+    $('body').circleMagic({
+          radius: 20,
+          density: 0.2,
+          color: 'rgba(255,255,255, .2)',
+          //color: 'random',
+          clearOffset: 0.3
+      });
+    })
+</script> -->
+
+<!-- <script src="{{ .Site.BaseURL }}js/snow.js" type="text/javascript"></script> -->
+
+
+

@@ -1,0 +1,64 @@
+$code-font-family: 
+Consolas, 
+Monaco, 
+Menlo, 
+"DejaVu Sans Mono", 
+"Bitstream Vera Sans Mono", 
+"Courier New", 
+monospace !default;
+
+$global-font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Helvetica Neue",
+"PingFang SC",
+"'Hiragino Sans GB",
+STHeiti,
+"Microsoft Yahei",
+"Source Han Sans SC",
+"Noto Sans CJK SC",
+"WenQuanYi Micro Hei",
+Arial,
+Verdana,
+sans-serif;
+
+$global-serif-font-family: 'Source Han Serif CN',
+'Source Han Serif SC',
+'Source Han Serif',
+'source-han-serif-sc',
+'Noto Serif SC',
+'Noto Serif',
+'noto-serif-sc',
+'PT Serif',
+'SongTi SC',
+serif;
+
+$title-font-family: "HiraMinProN-W6",
+"Source Han Serif CN",
+"Source Han Serif SC",
+"Source Han Serif TC",
+serif;
+
+
+$global-background-color: rgba(255, 255, 255, 1) !default;
+$global-font-color: #606975 !default;
+
+
+
+$global-shadow-color: rgba(0, 0, 0, 0.1) !default;
+$global-line-color: #ffffff!default;
+$global-solid-color: #77777747 !default;
+
+$global-box-background-color: rgba(255, 255, 255, 0.8) !default;
+
+$scrollbar-thumb-color:#0A4C95 !default;
+$scrollbar-track-color:#C2D2E4 !default;
+
+$bubble-background-color: rgba(93, 172, 228, 0.5) !default;
+$other-font-color: rgba(255, 255, 255, 0.9) !default;
+
+
+$fixed-panel-background-color:#606975 !default;
+$fixed-panel-font-color:#fff !default;
+$fixed-panel-panel-background-color:#fafafac9 !default;
+$fixed-panel-border-color:rgba(255,255,255,.6) !default;

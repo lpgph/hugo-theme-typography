@@ -1,0 +1,22 @@
+<footer class="post-footer">
+  {{ with .PrevInSection }}
+  <p>
+    {{ T "prev" | humanize }}&nbsp;<a class="previous" href="{{.Permalink}}">{{.Title}}</a>
+  </p>
+  {{ end }}
+  {{ with .NextInSection }}
+  <p>
+    {{ T "next" | humanize }}&nbsp;<a class="next" href="{{.Permalink}}">{{.Title}}</a>
+  </p>
+  {{ end }}
+  <!-- 相关推荐 -->
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+  <h3>{{T "seeAlso"}}</h3>
+  <ul class="see-also">
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+    {{ end }}
+</footer>

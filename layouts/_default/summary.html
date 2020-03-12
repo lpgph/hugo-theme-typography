@@ -1,0 +1,21 @@
+<h2 class="title">
+  <a href="{{ .Permalink}}" title="{{ .Title }}">
+    {{ .Title }}
+  </a>
+</h2>
+<p class="list-tags">
+  <span>
+    {{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span>
+  </span>
+  {{ with .Params.categories }}
+    <span>
+      <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+    </span>
+  {{ end }}
+  {{ with .Params.tags }}
+    <span>
+      <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+    </span>
+  {{ end }}
+  </p>
+<article>{{ .Summary }}......</article>

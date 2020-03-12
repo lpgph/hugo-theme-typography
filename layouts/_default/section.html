@@ -1,0 +1,15 @@
+{{ define "main_content" }}
+  <section class="post-list">
+    <p class="path-title">{{ T .Title }}<span>({{ len .Pages }})</span></p>
+    <ul>
+      {{ $paginator := .Paginate .Pages }}
+      {{ range $paginator.Pages }}
+        <li>
+          {{ .Render "summary"}}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+    <!-- pagination -->
+  {{ template "_internal/pagination.html" . }}
+{{ end }}

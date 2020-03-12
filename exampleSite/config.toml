@@ -1,0 +1,47 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "诗和远方"
+enableRobotsTXT = true
+hasCJKLanguage = true
+paginate = 20
+paginatePath = "page"
+enableEmoji = true
+DefaultContentLanguage = "zh"
+mainSections = ["posts"]
+enableInlineShortcodes = true
+
+rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+
+
+# disqusShortname = ""
+# googleAnalytics = ""
+
+
+copyright = "2017-2020"
+enableGitInfo = true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
+
+# Highlight options. See https://gohugo.io/content-management/syntax-highlighting/
+pygmentsStyle = "default"
+#pygmentsCodeFences = true # Enable syntax highlighting with GitHub flavoured code fences
+pygmentsUseClasses = true # Use CSS classes to format highlighted code
+#pygmentsCodefencesGuessSyntax = true
+#pygmentsOptions = "linenos=table"
+
+theme = "typography"
+
+#[taxonomies]
+# author = "author"
+# tag = "tags"
+# category = "categories"
+#  note = "note"
+
+#disableKinds = ["taxonomyTerm"]
+
+[Social]
+  Weibo = ""
+  Twitter = ""
+  GitHub = "lpgph"
+  Facebook = ""
+  LinkIn = ""
+[Author]
+  Name = "焚琴"

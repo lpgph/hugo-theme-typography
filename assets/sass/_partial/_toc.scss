@@ -1,0 +1,49 @@
+.article-toc{
+  h2{
+    padding: .625rem 1rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    // background: #d6f1f1!important;
+  }
+  .table-of-contents {
+    padding: 0.5rem 1rem;
+    line-height: 2;
+    font-size: 0.8rem;
+    nav{
+      max-height: 18.75rem;
+      overflow: auto;
+      @include scrollbar;
+    }
+    ul {
+      list-style-type: decimal;
+      margin: 0;
+      padding-left: 1rem;
+      &.active{
+        display: block;
+      }
+      li {
+        
+        ul {
+          padding-left: 1rem;
+        }
+
+        &.active{
+          &>ul{
+            display: block;
+          }
+          &>a {
+            color: darken($global-font-color, 30%) !important;
+          }
+        }
+
+        &>a+ul {
+          display: none;
+        }
+      }
+    }
+
+    &>ul {
+      padding: 0;
+    }
+  }
+}

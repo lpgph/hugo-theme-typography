@@ -1,0 +1,205 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === Post ===
+[posts]
+other = "Posts"
+# === Post ===
+
+# === Taxonomy ===
+[all]
+other = "all "
+
+[tag]
+other = "Tag"
+
+[tags]
+other = "Tags"
+
+[category]
+other = "Category"
+
+[categories]
+other = "Categories"
+# === Taxonomy ===
+
+[archive]
+other = "archive"
+
+[about]
+other = "about"
+
+# === Pagination ===
+[More]
+other = "More"
+# === Pagination ===
+
+# === partials/comments.html ===
+[valineLang]
+other = "en"
+# === partials/comments.html ===
+
+# === partials/footer.html ===
+[powered]
+other = "Powered by %s"
+
+[theme]
+other = "Theme - %s"
+# === partials/footer.html ===
+
+# === posts/single.html ===
+[toc]
+other = "Table of Contents"
+
+[publish]
+other = "published on"
+
+[publishDate]
+other = "published date"
+
+[included]
+other = "included in"
+
+[wordCount]
+other = "{{ .Count }} words"
+
+[wordCountTitle]
+other = "Word Count"
+
+[readingTimeTitle]
+other = "Reading Time"
+[readingTime]
+one = "one min"
+other = "{{.Count}} mins"
+
+[pageviews]
+other = "pageviews"
+
+[author]
+other = "Author"
+
+[lastMod]
+other = "This article is updated with %s"
+
+[license]
+other = "Published under the %s license"
+
+[back]
+other = "Back"
+
+[home]
+other = "Home"
+
+[readmore]
+other = "Read More"
+
+[year]
+other = "y"
+
+[day]
+other = "d"
+
+[hour]
+other = "hr"
+
+[minute]
+other = "min"
+
+[second]
+other = "sec"
+
+[return]
+other = "return"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFoundTitle]
+other = "404 Error"
+[pageNotFound]
+other = "We can't seem to find the page you're looking for."
+
+[backToHome]
+other = "Back to Home"
+# === 404.html ===
+
+
+[notes]
+  other = "Notes"
+[photos]
+  other = "Photos"
+
+[showMenu]
+  other = "Show Menu"
+[search]
+  other = "Search"
+[share]
+  other = "Share"
+[prev]
+  other = "Prev:"
+[next]
+  other = "Next:"
+[tagsCloud]
+  other = "Tags Cloud"
+[backToTop]
+  other = "Back To Top"
+[visitors]
+  other = "visitors"
+
+[topPosts]
+  other = "Top Posts"
+[newComments]
+  other = "New Comments"
+[notNewComments]
+  other = "Not New Comments"
+[hotPosts]
+  other = "Hot Posts"
+[notHotPosts]
+other = "Not Hot Posts"
+
+[seeAlso]
+other = "See Also"
+
+[copyright]
+other = "本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可"
+
+
+# === Pagination ===
+
+
+[hosted]
+other = "Hosted by %s "
+
+[cdn]
+other = "CDN by %s"
+
+[blogInfo]
+other = "Blog Info"
+
+[postsCount]
+other = "Posts Count"
+[commentsCount]
+other = "Comments Count"
+[runTime]
+other = "Run Time"
+[lastActive]
+other = "Last Active"
+
+# === partials/footer.html ===
+
+[footerRunTime]
+other = "Run Time "
+
+[ago]
+other = "ago"
+
+
+# === partials/comments.html ===
+
+
+[pageComments]
+other = "Page Comments"
+
+
+# === posts/single.html ===
+
+# === 404.html ===

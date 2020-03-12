@@ -1,0 +1,36 @@
+  <div id="aplayer"></div> 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script> -->
+
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}lib/aplayer/APlayer.min.css">
+  <script src="{{ .Site.BaseURL }}lib/aplayer/APlayer.min.js"></script>
+
+  <script>
+  const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    fixed: true,
+    autoplay: false,
+    theme: '#FADFA3',
+    loop: 'all',
+    order: 'random',
+    preload: 'auto',
+    volume: 0.3,
+    mutex: true,
+    listFolded: true,
+    listMaxHeight: 90,
+    lrcType: 3,
+    audio: [{
+        name: "Devil's Tears",
+        artist: 'Vicion',
+        url: "{{ .Site.BaseURL }}music/Vicion - Devil's Tears.mp3",
+        cover: "{{ .Site.BaseURL }}music/cover/Vicion - Devil's Tears.jpg",
+        lrc: "{{ .Site.BaseURL }}music/lrc/Vicion - Devil's Tears"
+    },{
+        name: "Devil's Tears",
+        artist: 'Vicion',
+        url: "{{ .Site.BaseURL }}music/Vicion - Devil's Tears.mp3",
+        cover: "{{ .Site.BaseURL }}music/cover/Vicion - Devil's Tears.jpg",
+        lrc: "{{ .Site.BaseURL }}music/lrc/Vicion - Devil's Tears"
+    }]
+  });
+  </script>

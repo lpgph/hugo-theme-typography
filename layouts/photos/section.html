@@ -1,0 +1,22 @@
+{{ define "main_content" }}
+  <p class="path-title">{{ T .Title }}<span>({{ len .Pages }})</span></p>
+  <div class="photo-list">
+    {{ $pages := where .Site.RegularPages "Type" "in" .Section }}
+    {{ $paginator := .Paginate $pages}}
+    {{ range $paginator.Pages }}
+    <figure >
+      <a href="{{ .Permalink}}" class="box" title="{{ .Description }}">
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}"/> 
+        <figcaption>
+          <h4>{{ .Title }}</h4>
+          <p>
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time>
+          </p>
+        </figcaption>
+      </a>
+    </figure>
+    {{ end }}
+  </div>
+  {{ template "_internal/pagination.html" . }}
+{{ end }}
